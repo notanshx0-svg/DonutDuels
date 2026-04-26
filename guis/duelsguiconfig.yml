@@ -1,0 +1,72 @@
+# DuelGUI Configuration
+
+gui:
+  title: "ᴄʀᴇᴀᴛᴇ ᴅᴜᴇʟ - {target}"
+  size: 27
+
+buttons:
+  cancel:
+    slot: 10
+    material: "RED_STAINED_GLASS_PANE"
+    name: "#FF0000ᴄᴀɴᴄᴇʟ"
+    lore:
+      - "&fClick to cancel"
+  
+  arena:
+    slot: 12
+    name: "#00FF6Cᴀʀᴇɴᴀ"
+    lore:
+      - "&fClick to change map"
+      - "&7({arena})"
+    no_arena_material: "BARRIER"
+    no_arena_lore:
+      - "&fClick to change map"
+      - "&7(No arenas available)"
+  
+  time:
+    slot: 13
+    material: "CLOCK"
+    name: "#00FF6Cᴛɪᴍᴇ"
+    lore:
+      - "&7({time}m)"
+    default_minutes: 5
+    min_minutes: 1
+    max_minutes: 30
+  
+  ping:
+    slot: 14
+    material: "CREEPER_BANNER_PATTERN"
+    name: "#00FF6Cᴘɪɴɢ"
+    lore:
+      - "&7Ping (&b{ping}ms&7)"
+  
+  confirm:
+    slot: 16
+    material: "LIME_STAINED_GLASS_PANE"
+    name: "#1BFF00ѕᴇɴᴅ"
+    lore:
+      - "&fClick to send request"
+
+# Materials used for arena representation
+arena_materials:
+  - "SAND"
+  - "GRASS_BLOCK"
+  - "NETHERITE_BLOCK"
+  - "STONE"
+  - "COBBLESTONE"
+  - "DIAMOND_BLOCK"
+  - "EMERALD_BLOCK"
+  - "GOLD_BLOCK"
+  - "IRON_BLOCK"
+  - "REDSTONE_BLOCK"
+
+# Sound settings
+sounds:
+  button_click: "UI_BUTTON_CLICK"
+  error: "ENTITY_VILLAGER_NO"
+  volume: 1.0
+  pitch: 1.0
+
+# Cooldown settings
+cooldown:
+  click_cooldown_ms: 90

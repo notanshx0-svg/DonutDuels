@@ -1,0 +1,33 @@
+#plugin yml
+name: DonutDuels
+main: org.ms.donutduels.DonutDuels
+version: '1.5'
+api-version: '1.21'
+author: MSStudios
+folia-supported: true
+
+depend:
+  - FastAsyncWorldEdit
+libraries:
+  - com.zaxxer:HikariCP:5.1.0
+
+commands:
+  queue:
+    description: Open the queue system GUI
+    usage: /queue
+  duel:
+    description: Duel management commands
+    usage: /duel <pos1|pos2|create|reload> [name]
+    permission: donutduels.admin
+    aliases: [duels]
+  donutduels:
+    description: DonutDuels management commands
+    usage: /donutduels reload
+    permission: donutduels.admin
+  leave:
+    description: Leave the current duel arena
+    usage: /leave
+permissions:
+  donutduels.admin:
+    description: admin
+    default: op

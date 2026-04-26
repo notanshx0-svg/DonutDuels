@@ -1,0 +1,62 @@
+# Queue GUI Configuration
+
+# GUI Settings
+gui:
+  title: "ѕᴇʟᴇᴄᴛ ʀᴇɢɪᴏɴѕ & ᴄᴏɴꜰɪʀᴍ"
+  size: 27
+  click-cooldown-ms: 90
+  actionbar-update-interval-ticks: 20
+
+# Button Configuration
+buttons:
+  # Cancel Button (Red Stained Glass Pane)
+  cancel:
+    slot: 10
+    material: "RED_STAINED_GLASS_PANE"
+    name: "#FF0000ᴄᴀɴᴄᴇʟ"
+    lore:
+      - "&fClick to cancel"
+  
+  # Wait Time Button (Compass)
+  wait-time:
+    slot: 12
+    material: "COMPASS"
+    name: "#1DFF98ᴡᴀɪᴛ ᴛɪᴍᴇ"
+    estimated-format: "&7Estimated Wait: {time}"
+    queued-format: "&7Currently queued: {count}"
+  
+  # Statistics Button (Gray Dye)
+  statistics:
+    slot: 13
+    material: "GRAY_DYE"
+    name: "#1DFF98ѕᴛᴀᴛɪѕᴛɪᴄѕ"
+    wins-format: "&7Wins: {wins}"
+    losses-format: "&7Losses: {losses}"
+    streak-format: "&7Streak: {streak}"
+  
+  # Region Button (Feather)
+  region:
+    slot: 14
+    material: "FEATHER"
+    name: "#1DFF98ʀᴇɢɪᴏɴ"
+    ping-format: "&7Ping (&b{ping}ms&7)"
+  
+  # Search Button (Lime Stained Glass Pane)
+  search:
+    slot: 16
+    material: "LIME_STAINED_GLASS_PANE"
+    name: "#1BFF00ѕᴇᴀʀᴄʜ"
+    lore:
+      - "&fClick to search for a queue"
+
+# Sound Configuration
+sounds:
+  button-click: "UI_BUTTON_CLICK"
+  search: "MUSIC_DISC_MELLOHI"
+  volume: 1.0
+  pitch: 1.0
+
+# Message Configuration
+messages:
+  joined-queue: "&7You joined the casual queue"
+  searching-actionbar-format: "&7Searching for a Casual Duel... Estimated Time: #FF0000< {time} >"

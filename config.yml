@@ -1,0 +1,93 @@
+#
+#
+#    ██████╗  ██████╗ ███╗   ██╗██╗   ██╗████████╗   ██████╗ ██╗   ██╗███████╗██╗     ███████╗
+#██╔══██╗██╔═══██╗████╗  ██║██║   ██║╚══██╔══╝   ██╔══██╗██║   ██║██╔════╝██║     ██╔════╝
+#██║  ██║██║   ██║██╔██╗ ██║██║   ██║   ██║█████╗██║  ██║██║   ██║█████╗  ██║     ███████╗
+#██║  ██║██║   ██║██║╚██╗██║██║   ██║   ██║╚════╝██║  ██║██║   ██║██╔══╝  ██║     ╚════██║
+#██████╔╝╚██████╔╝██║ ╚████║╚██████╔╝   ██║      ██████╔╝╚██████╔╝███████╗███████╗███████║
+#╚═════╝  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝    ╚═╝      ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚══════╝
+#
+
+#config yml
+database:
+  type: sqlite  # or mysql
+  mysql:
+    host: localhost
+    port: 3306
+    database: donutduels
+    user: root
+    password: ''
+
+migration:
+  old-database:
+    type: sqlite  # or mysql
+    sqlite-path: plugins/DonutDuels/donutduels.db
+    host: localhost
+    port: 3306
+    database: donutduels
+    username: root
+    password: ''
+
+# Messages Configuration
+messages:
+  # Leave Command Messages
+  leave:
+    only-players: "&cOnly players can use this command."
+    not-in-duel: "&cYou are not in a duel or spectating."
+  
+  # Queue Command Messages
+  queue:
+    only-players: "&cThis command can only be used by players."
+    left-queue-chat: "&cYou left the casual queue"
+    left-queue-actionbar: "&cYou left the casual queue"
+    joined-queue: "&7You joined the casual queue"
+  
+  # Duel Command Messages
+  duel:
+    only-players: "&cThis command can only be used by players."
+    usage: "&cUsage: /duel <pos1|pos2|manualpos1|manualpos2|create|accept|select|player> [name]"
+    no-permission: "&cYou do not have permission to use this command."
+    set-arena-first: "&cPlease set an arena first"
+    position-set: "&b&lDUELS &8>> &7Set &b{position} &7for arena &b{arena} &7at &7{location}"
+    manual-position-set: "&b&lDUELS &8>> &7Set &b{position} &7at &7{location}"
+    create-arena-prompt: "&b&lDUELS &8>> &7Do /duel create <name>"
+    select-usage: "&cUsage: /duel select <arena_name>"
+    arena-not-exist: "&cArena '{arena}' does not exist."
+    arena-selected: "&b&lDUELS &8>> &7Selected arena &b{arena}"
+    create-usage: "&cUsage: /duel create <name>"
+    arena-already-exists: "&cArena '{arena}' already exists. Choose a different name."
+    arena-already-exists-actionbar: "&cArena already exists!"
+    arena-created-worldedit: "&b&lDUELS &8>> &7Arena &b{arena} &7created successfully using WorldEdit selection."
+    arena-created-manual: "&b&lDUELS &8>> &7Arena &b{arena} &7created successfully using manual positions."
+    arena-created-actionbar: "&b&lDUELS &8>> &7Arena &b{arena} &7created successfully."
+    need-selection-or-positions: "&cYou must either have a WorldEdit selection or set both manualpos1 and manualpos2 first."
+    accept-usage: "&cUsage: /duel accept <player>"
+    no-pending-request: "&cNo pending duel request from {player}"
+    loading-schematics: "&b&lDUELS &8>> &7Loading schematics from folder..."
+    schematics-loaded: "&b&lDUELS &8>> &aSchematic loading completed!"
+    no-schematics-found: "&b&lDUELS &8>> &7No schematic files found in the schematics folder."
+    schematics-folder-info: "&7Place .schem or .schematic files in: &e{folder}"
+    available-schematics: "&b&lDUELS &8>> &7Available schematic files:"
+    schematic-file-entry: "&8- &b{file}"
+    player-not-online: "&cThis user is not online."
+    cannot-duel-yourself: "&cYou cannot duel yourself."
+  
+  # DonutDuels Command Messages
+  donutduels:
+    no-permission: "&cYou do not have permission to use this command."
+    usage: "&cUsage: /{label} <reload|migrate>"
+    reloaded: "&b&lDUELS &8>> &7Reloaded at &a{duration}ms"
+    migrate-usage: "&cUsage: /{label} migrate \"from old donutduels\""
+    migration-success: "&b&lDUELS &8>>#1BFF00ᴍɪɢʀᴀᴛɪᴏɴ ѕᴜᴄᴇѕѕꜰᴜʟʀ."
+    migration-error: "&b&lDUELS &8>>#FF0000ᴍɪɢʀᴀᴛɪᴏɴ ᴇʀʀᴏʀ, ᴘʟᴇᴀѕᴇ ᴄʜᴇᴄᴋ ᴄᴏɴѕᴏʟᴇ"
+    invalid-subcommand: "&cInvalid subcommand. Use reload or migrate."
+
+# Sound Configuration
+sounds:
+  duel:
+    position-set: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    player-not-online: "ENTITY_VILLAGER_NO"
+  donutduels:
+    reload-success: "ENTITY_PLAYER_LEVELUP"
+    migration-success: "ENTITY_VILLAGER_YES"
+#########################
